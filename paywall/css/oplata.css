@@ -1,0 +1,83 @@
+/* Страница оплаты «Незабываемая» (/q/ru/): вид — пейвол квиза /q/quiz.css; здесь только новые блоки (программа, снимки)
+   и поправки сетки этой страницы. */
+
+/* Программа: плашка «Собрана по твоим ответам» и шесть модулей, темы свёрнуты; карточки одной высоты (название до двух строк). */
+.rp-center-pill{margin:-4px 0 16px;text-align:center}
+.rp-for{display:inline-flex;align-items:center;gap:5px;padding:5px 12px;border-radius:99px;background:var(--mia-lilac-soft);font-style:normal;font-size:11.5px;font-weight:600;color:var(--mia-violet)}
+.rp-for svg{width:13px;height:13px}
+.rp-module{border-radius:20px;background:#fff;border:1px solid #E8DDF3}
+.rp-module+.rp-module{margin-top:10px}
+.rp-module summary{display:grid;grid-template-columns:1fr 20px;gap:12px;align-items:center;box-sizing:border-box;min-height:89px;padding:14px 16px;cursor:pointer;list-style:none}
+.rp-module summary::-webkit-details-marker{display:none}
+.rp-module summary>svg{width:20px;height:20px;color:var(--mia-violet);transition:transform .3s cubic-bezier(.22,1,.36,1)}
+.rp-module[open] summary>svg{transform:rotate(180deg)}
+.rp-module-head small{font-size:10px;font-weight:700;letter-spacing:1px;color:var(--mia-violet)}
+.rp-module-head strong{display:block;margin-top:3px;font-size:15px;line-height:1.3;color:var(--mia-ink)}
+.rp-module-body{padding:0 16px 16px}
+.rp-module-body>p:first-child{margin:0;font-size:13.5px;line-height:1.55;color:#4B3D57}
+.rp-topics{margin:12px 0 0;padding:0;list-style:none;counter-reset:t}
+.rp-topics li{position:relative;padding:10px 0 10px 30px;border-top:1px solid #F0E9F6;counter-increment:t}
+.rp-topics li::before{content:counter(t);position:absolute;left:0;top:10px;width:20px;height:20px;border-radius:50%;background:var(--mia-lilac-soft);color:var(--mia-violet);font:700 11px/20px var(--sans);text-align:center}
+.rp-topics strong{display:block;font-size:13.5px;line-height:20px;color:var(--mia-ink)}
+.rp-topics span{display:block;margin-top:2px;font-size:12.5px;line-height:18px;color:var(--mia-muted)}
+.rp-result{margin-top:12px;padding:14px;border-radius:14px;background:#F3FBD6}
+.rp-result small{font-size:10px;font-weight:700;letter-spacing:1px;color:#5A6B1E}
+.rp-result strong{display:block;margin:3px 0 4px;font-size:14.5px;color:var(--mia-ink)}
+.rp-result p{margin:0;font-size:12.5px;line-height:1.5;color:#4B3D57}
+
+/* Снимки приложения: три места под снимки экранов, листаются вбок; подписи одной высоты. */
+.rp-shots{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;margin:0 -22px;padding:0 22px;scrollbar-width:none}
+.rp-shots::-webkit-scrollbar{display:none}
+.rp-shots figure{flex:0 0 56%;max-width:210px;margin:0;scroll-snap-align:center}
+.rp-shot{display:grid;place-content:center;justify-items:center;gap:6px;aspect-ratio:9/16;border-radius:20px;border:1.5px dashed #CDB8E6;background:linear-gradient(160deg,#F4ECFD,#fff);color:#A68BC4}
+.rp-shot svg{width:28px;height:28px}
+.rp-shot small{font-size:11px;font-weight:600}
+.rp-shots figcaption{margin-top:10px;font-size:12.5px;line-height:1.45;color:var(--mia-muted)}
+.rp-shots figcaption small{display:block;font-size:10px;font-weight:700;letter-spacing:1px;color:var(--mia-violet)}
+.rp-shots figcaption strong{display:block;margin:2px 0;font-size:15px;color:var(--mia-ink)}
+@media (prefers-reduced-motion:reduce){.rp-module summary>svg{transition:none}}
+
+/* Сетка (08.11.2026, владелец: «выровнять до пикселя»): поле страницы 22 px, текст в широких карточках — +16 px от рамки
+   (39 px от края экрана), в половинных — +14 px; скругления 20 / 16 / 14; раздел — 40 px сверху и 16 px до содержимого;
+   иконки — по центру первой строки. Поправки к общим классам квиза, только на этой странице. */
+.rp-offer .q2-offer-title{margin:8px 0 20px}
+.rp-offer .q2-chips{margin:10px 0}
+.rp-offer .q2-chips>div{padding:12px 14px;border-radius:16px}
+.rp-offer .q2-metrics>div{padding:14px;border-radius:16px}
+.rp-offer .q2-h3{margin:40px 0 16px}
+.rp-offer .q2-tariff{padding:16px 15.5px;border-radius:20px}
+.rp-offer .ob-legal-links{margin:10px 0 0}
+.rp-offer .q2-card{padding:16px;border-radius:20px}
+.rp-offer .q2-features{margin-top:10px}
+.rp-offer .q2-weeks-list>div{padding:14px 16px;border-radius:16px}
+.rp-offer .sale-faq summary{padding:16px 0;font-size:14.5px;line-height:1.4;font-weight:600}
+.rp-offer .q2-before-after p{min-height:33px} /* пункты в одну и две строки — одной высоты */
+
+/* Полоски «Сейчас → Цель» — пять клеточек; строки заполняются сверху вниз, сначала «Сейчас», потом «Цель». */
+.rp-offer .q2-meter{grid-template-columns:repeat(5,1fr)}
+.rp-offer .q2-metrics>div:first-child .q2-metric:nth-child(1) .q2-meter i.on{animation-delay:0s}
+.rp-offer .q2-metrics>div:first-child .q2-metric:nth-child(2) .q2-meter i.on{animation-delay:.15s}
+.rp-offer .q2-metrics>div:first-child .q2-metric:nth-child(3) .q2-meter i.on{animation-delay:.3s}
+.rp-offer .q2-metrics>div:first-child .q2-metric:nth-child(4) .q2-meter i.on{animation-delay:.45s}
+.rp-offer .q2-metrics>div:first-child .q2-metric:nth-child(5) .q2-meter i.on{animation-delay:.6s}
+.rp-offer .q2-metrics>div:last-child .q2-metric:nth-child(1) .q2-meter i.on{animation-delay:.75s}
+.rp-offer .q2-metrics>div:last-child .q2-metric:nth-child(2) .q2-meter i.on{animation-delay:.9s}
+.rp-offer .q2-metrics>div:last-child .q2-metric:nth-child(3) .q2-meter i.on{animation-delay:1.05s}
+.rp-offer .q2-metrics>div:last-child .q2-metric:nth-child(4) .q2-meter i.on{animation-delay:1.2s}
+.rp-offer .q2-metrics>div:last-child .q2-metric:nth-child(5) .q2-meter i.on{animation-delay:1.35s}
+
+/* График «через 4 недели» (вид — q2-ready квиза): ждёт, пока окажется на экране; точки недель — по ходу кривой. */
+.rp-chart{margin:0}
+.rp-chart circle.rp-week{transform-box:fill-box;transform-origin:center;animation:q2-pop .4s ease both}
+.rp-chart circle.rp-week:nth-of-type(2){animation-delay:.6s}
+.rp-chart circle.rp-week:nth-of-type(3){animation-delay:1s}
+.rp-chart circle.rp-week:nth-of-type(4){animation-delay:1.4s}
+.rp-chart:not(.rp-in) path,.rp-chart:not(.rp-in) circle,.rp-chart:not(.rp-in) circle.rp-week,.rp-chart:not(.rp-in) .q2-ready-tag{animation-play-state:paused}
+@media (prefers-reduced-motion:reduce){.rp-chart circle.rp-week{animation:none}}
+
+/* Карточка программы и «В итоге»: иконка по центру всего пункта (заголовок + описание), пункты одной высоты, шаг 16 px. */
+.rp-offer .q2-features>p{margin:4px 0 16px}
+.rp-offer .q2-features>div,.rp-offer .q2-results>div{align-items:center;min-height:64px;margin-top:0}
+.rp-offer .q2-features>div+div,.rp-offer .q2-results>div+div{margin-top:16px}
+.rp-offer .q2-features p,.rp-offer .q2-results p{line-height:20px}
+.rp-offer .q2-features strong,.rp-offer .q2-results strong{line-height:22px;margin-bottom:2px}

@@ -1,0 +1,3 @@
+/* Значения по умолчанию для статического хостинга. При запуске через server.cjs этот адрес
+   отдаётся сервером из переменных окружения (см. .env.example). apiBase — адрес нашего сервера backend/ для боевой оплаты, appStoreUrl — страница mía в App Store (пусто — «Muy pronto»). Секреты сюда не помещать. */
+window.MiaConfig={paymentMode:'test',priceWeek:9.99,priceMonth:29.99,priceMonths4:59.99,priceReport:0.99,priceReportFull:6.99,priceWeeks4:19.99,priceWeeks4Full:54.99,priceWeeks12:39.99,priceWeeks12Full:84.99,priceWeeks24:74.99,priceWeeks24Full:114.99,currency:'EUR',testTools:true,apiBase:'',appStoreUrl:'',legalBase:'https://miadays.app/landing/legal/es/',bonusUrl:'',appVersion:'0.1.0'};

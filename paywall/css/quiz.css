@@ -1,0 +1,461 @@
+/* mía · второй квиз (/q/). Поверх общих стилей воронки: те же токены (color-v10.css), кнопки, ответы и поля. */
+.q2-body{background:var(--mia-paper)}
+.q2-page{--ob-bg:var(--mia-paper);padding-bottom:28px}
+.q2-page h2 em,.q2-h3 em{font-style:normal;color:var(--mia-violet)}
+.q2-progress{margin:0 0 18px}
+.q2-heading h2{font-size:23px!important;line-height:1.28!important;letter-spacing:-.4px!important}
+.q2-single .fq-answers{margin-top:6px}
+.q2-answer{min-height:62px;padding:14px}
+.q2-icon{background:var(--mia-lilac-soft);color:var(--mia-violet)}
+.q2-answer.selected{border-color:var(--mia-violet);background:#F3ECFD}
+
+/* Картинки: файл из q/img/, без файла — мягкая заглушка со стеклянным сердцем. */
+.q2-img{position:relative;border-radius:24px;overflow:hidden;background:linear-gradient(150deg,#EADFFD 0%,#F7E9F3 55%,#FFE3D2 100%)}
+.q2-img>img{display:block;width:100%;height:100%;object-fit:cover}
+.q2-ph-heart{display:none}
+.q2-img.q2-ph .q2-ph-heart{display:grid;place-items:center;position:absolute;inset:0}
+.q2-img.q2-ph .q2-ph-heart img{width:46%;max-width:150px;opacity:.9;filter:drop-shadow(0 12px 22px #7540BC33)}
+.q2-qimg{height:150px;margin:0 0 16px}
+.q2-info-img{aspect-ratio:4/3;height:auto;margin:20px 0 22px}
+.q2-wide{height:200px}
+.q2-profile-img{height:170px;margin:14px 0}
+
+/* Возраст. */
+.q2-hero{margin:8px 0 18px}
+.q2-hero h2{font:700 30px/1.08 var(--sans);letter-spacing:-1.2px;color:var(--mia-ink);margin:0 0 10px;text-transform:none}
+.q2-hero p{font-size:14px;line-height:1.5;color:var(--mia-muted);margin:0}
+.q2-age-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.q2-age-card{display:flex;flex-direction:column;padding:0;border:1.5px solid #DFD1EA;border-radius:22px;background:#fff;overflow:hidden;cursor:pointer;text-align:left;transition:transform .2s,border-color .2s}
+.q2-age-card:active{transform:scale(.98)}
+.q2-age-card.selected{border-color:var(--mia-violet)}
+.q2-age-img{height:auto;aspect-ratio:1/1;border-radius:0}
+.q2-age-label{display:flex;align-items:center;justify-content:space-between;padding:12px 14px;background:var(--mia-lime);font:700 17px var(--sans);color:var(--mia-ink)}
+.q2-age-label b{display:grid;place-items:center;width:28px;height:28px;border-radius:50%;background:var(--mia-ink);color:var(--mia-lime)}
+.q2-age-label svg{width:16px;height:16px}
+.q2-legal{margin:18px 0 0;font-size:11px;line-height:1.5;color:var(--mia-muted);text-align:center}
+.q2-legal a,.q2-footer a{color:inherit}
+
+/* Экраны-прогревы и инфо. */
+.q2-info-copy h2{font:700 28px/1.1 var(--sans);letter-spacing:-1px;color:var(--mia-ink);margin:6px 0 12px}
+.q2-info-copy p,.q2-lead{font-size:15px;line-height:1.55;color:var(--mia-muted);margin:0}
+.q2-big{display:flex;flex-direction:column;align-items:center;text-align:center;margin:18px 0 10px}
+.q2-big strong{font:800 44px/1 var(--sans);letter-spacing:-1.6px;color:var(--mia-violet)}
+.q2-big span{margin-top:6px;font-size:15px;color:var(--mia-muted)}
+.q2-quote{margin:16px 0 22px;padding:18px 20px;border-radius:22px;background:var(--mia-night);color:#F5EDFF;font:600 18px/1.4 var(--sans)}
+.q2-brain-art{position:relative;margin:16px 0}
+.q2-brain-tags{display:flex;gap:8px;justify-content:center;margin-top:-18px;position:relative}
+.q2-brain-tags span{padding:7px 12px;border-radius:99px;background:#fff;border:1px solid #DFD1EA;font-size:12px;font-weight:600;color:var(--mia-violet)}
+.q2-lead{margin:0 0 20px}
+.q2-note{font-size:11px;line-height:1.5;color:var(--mia-muted);text-align:center;margin:10px 0 18px}
+
+/* Карточки. */
+.q2-card{border-radius:24px;background:#fff;border:1px solid #E8DDF3;padding:18px;box-shadow:0 10px 30px #7540BC0d}
+.q2-gauge-head{display:flex;justify-content:space-between;align-items:baseline;font-size:13px;color:var(--mia-muted)}
+.q2-gauge-head b{font-size:15px;color:var(--mia-ink)}
+.q2-gauge-bar{position:relative;height:10px;border-radius:9px;margin:40px 0 8px;background:linear-gradient(90deg,#FF8A7A,#FFD56B 50%,#9BD66A)}
+.q2-gauge-bar i{position:absolute;top:50%;width:20px;height:20px;margin:-10px 0 0 -10px;border-radius:50%;background:#fff;border:4px solid var(--mia-ink)}
+.q2-gauge-bar em{position:absolute;bottom:22px;left:50%;transform:translateX(-50%);font:700 12px var(--sans);font-style:normal;padding:3px 7px;border-radius:8px;background:var(--mia-ink);color:#fff}
+.q2-gauge-scale{display:flex;justify-content:space-between;font-size:11px;color:var(--mia-muted)}
+.q2-summary h3{font:700 17px/1.3 var(--sans);color:var(--mia-ink);margin:0 0 6px}
+.q2-summary p{font-size:14px;line-height:1.5;color:var(--mia-muted);margin:0}
+.q2-traits{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:12px 0 0}
+.q2-traits>div{display:grid;grid-template-columns:36px 1fr;grid-template-rows:auto auto;column-gap:10px;align-items:center;padding:12px;border-radius:18px;background:#fff;border:1px solid #E8DDF3}
+.q2-traits span{grid-row:1/3;display:grid;place-items:center;width:36px;height:36px;border-radius:12px;background:var(--mia-lilac-soft);color:var(--mia-violet)}
+.q2-traits svg{width:18px;height:18px}
+.q2-traits small{font-size:11px;color:var(--mia-muted)}
+.q2-traits strong{font-size:14px;color:var(--mia-ink)}
+.q2-curve{margin:20px 0 0}
+.q2-curve svg{display:block;width:100%;height:auto}
+.q2-curve-labels{display:flex;justify-content:space-between;align-items:center;font-size:12px;color:var(--mia-muted);margin-top:6px}
+.q2-pill{padding:6px 10px;border-radius:99px;background:var(--mia-ink);color:var(--mia-lime);font-weight:700}
+.q2-weeks{position:relative;margin:20px 0 0}
+.q2-weeks-bars{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;align-items:end;height:180px}
+.q2-weeks-bars>div{display:flex;flex-direction:column;justify-content:flex-end;align-items:center;height:100%;gap:8px}
+.q2-weeks-bars i{display:block;width:100%;height:var(--h);border-radius:12px 12px 6px 6px;background:linear-gradient(180deg,var(--mia-lilac),#E8DCFB)}
+.q2-weeks-bars>div:last-child i{background:linear-gradient(180deg,var(--mia-violet),var(--mia-lilac))}
+.q2-weeks-bars span{font-size:11px;color:var(--mia-muted);white-space:nowrap}
+.q2-weeks-heart{position:absolute;right:22px;top:6px;display:grid;place-items:center;width:38px;height:38px;border-radius:50%;background:var(--mia-lime);color:var(--mia-ink)}
+
+/* Сборка плана. */
+.q2-loader-title{font:700 22px var(--sans);text-align:center;color:var(--mia-ink);margin:10px 0 20px}
+.q2-loader-rows{display:grid;gap:18px}
+.q2-loader-top{display:flex;justify-content:space-between;font-size:14px;color:var(--mia-ink);margin-bottom:8px}
+.q2-loader-track{height:8px;border-radius:9px;background:#E8DDF3;overflow:hidden}
+.q2-loader-track i{display:block;height:100%;width:0;border-radius:9px;background:var(--mia-violet);transition:width .08s linear}
+.q2-loader-ask{position:fixed;inset:0;z-index:50;display:grid;place-items:end center;background:#2D213C66;padding:16px}
+.q2-loader-ask[hidden]{display:none}
+.q2-ask-card{width:100%;max-width:420px;border-radius:26px;background:#fff;padding:22px;text-align:center}
+.q2-ask-card small{font-size:11px;letter-spacing:1px;text-transform:uppercase;color:var(--mia-muted)}
+.q2-ask-card h3{font:700 20px/1.3 var(--sans);color:var(--mia-ink);margin:8px 0 18px}
+.q2-ask-card>div{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.q2-ask-btn{min-height:52px;border-radius:16px;border:1.5px solid #DFD1EA;background:#fff;font:700 16px var(--sans);color:var(--mia-ink);cursor:pointer}
+.q2-ask-btn.on{background:var(--mia-lime);border-color:var(--mia-lime)}
+
+/* Почта. */
+.q2-users{display:flex;align-items:center;gap:8px;margin:14px 0 4px;font-size:13px;color:var(--mia-violet);font-weight:600}
+.q2-users svg{width:18px;height:18px}
+
+/* Предложение. */
+.q2-offer{padding-top:0}
+.q2-sticky{position:sticky;top:0;z-index:20;display:flex;justify-content:space-between;align-items:center;margin:0 -22px 14px;padding:10px 22px;background:#FAF8FEee;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid #E8DDF3}
+.q2-sticky-btn{padding:10px 16px;border-radius:99px;border:0;background:var(--mia-lime);color:var(--mia-ink);font:800 12px var(--sans);letter-spacing:.5px;cursor:pointer}
+.q2-offer-title{font:700 26px/1.12 var(--sans);letter-spacing:-.8px;color:var(--mia-ink);text-align:center;margin:8px 0 16px}
+.q2-ba{position:relative}
+.q2-ba-img{aspect-ratio:3/2;height:auto}
+.q2-ba-tabs{position:absolute;top:10px;left:10px;right:10px;display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.q2-ba-tabs span{padding:7px;border-radius:10px;background:#ffffffd9;text-align:center;font-size:12px;font-weight:700;color:var(--mia-ink)}
+.q2-ba-tabs span.on{background:var(--mia-violet);color:#fff}
+.q2-chips{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:12px 0}
+.q2-chips>div{display:grid;grid-template-columns:28px 1fr;column-gap:8px;align-items:center;padding:10px 12px;border-radius:16px;background:#fff;border:1px solid #E8DDF3}
+.q2-chips svg{grid-row:1/3;width:20px;height:20px;color:var(--mia-violet)}
+.q2-chips small{font-size:10px;color:var(--mia-muted)}
+.q2-chips strong{font-size:13px;color:var(--mia-ink)}
+.q2-metrics{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.q2-metrics>div{display:grid;gap:12px;padding:14px;border-radius:20px;background:#fff;border:1px solid #E8DDF3}
+.q2-metric small{display:block;font-size:11px;color:var(--mia-muted)}
+.q2-metric strong{display:block;font-size:14px;color:var(--mia-ink);margin:2px 0 6px}
+.q2-meter{display:grid;grid-template-columns:repeat(3,1fr);gap:4px}
+.q2-meter i{height:5px;border-radius:4px;background:#EEE6F5}
+.q2-meter.bad i.on{background:#FF8A7A}
+.q2-meter.good i.on{background:#7BC96A}
+.q2-h3{font:700 22px/1.2 var(--sans);letter-spacing:-.6px;color:var(--mia-ink);text-align:center;margin:26px 0 14px}
+.q2-buy{scroll-margin-top:70px}
+.q2-tariffs{display:grid;gap:10px;margin:0 0 14px}
+.q2-tariff{position:relative;display:grid;grid-template-columns:22px 1fr auto;gap:12px;align-items:center;width:100%;padding:16px 14px;border-radius:20px;border:1.5px solid #DFD1EA;background:#fff;text-align:left;cursor:pointer}
+.q2-tariff.on{border-color:var(--mia-violet);background:#F6F0FE;box-shadow:0 0 0 3px #C9AFF555}
+.q2-tariff-flag{position:absolute;top:-10px;left:14px;padding:3px 10px;border-radius:99px;background:var(--mia-violet);color:#fff;font:800 10px var(--sans);letter-spacing:.6px}
+.q2-tariff-dot{width:20px;height:20px;border-radius:50%;border:2px solid #C5AEDB}
+.q2-tariff.on .q2-tariff-dot{border:6px solid var(--mia-violet)}
+.q2-tariff-name strong{display:block;font-size:14px;color:var(--mia-ink)}
+.q2-tariff-name small{font-size:12px;color:var(--mia-muted)}
+.q2-tariff-day{text-align:right}
+.q2-tariff-day b{display:block;font-size:17px;color:var(--mia-ink)}
+.q2-tariff-day small{font-size:11px;color:var(--mia-muted)}
+.q2-renewal{font-size:12px;line-height:1.5;color:var(--mia-muted);margin:12px 0 6px}
+.q2-weeks-list{display:grid;gap:8px}
+.q2-weeks-list>div{padding:14px 16px;border-radius:18px;background:#fff;border:1px solid #E8DDF3}
+.q2-weeks-list>div:last-child{background:var(--mia-night);border-color:var(--mia-night)}
+.q2-weeks-list small{font-size:10px;letter-spacing:1px;font-weight:700;color:var(--mia-violet)}
+.q2-weeks-list strong{display:block;font-size:15px;color:var(--mia-ink);margin-top:3px}
+.q2-weeks-list>div:last-child small{color:var(--mia-lime)}
+.q2-weeks-list>div:last-child strong{color:#fff}
+.q2-features{margin:18px 0 0}
+.q2-features h4{font:700 18px var(--sans);color:var(--mia-violet);margin:0}
+.q2-features>p{font-size:13px;color:var(--mia-muted);margin:2px 0 12px}
+.q2-features>div,.q2-results>div{display:grid;grid-template-columns:36px 1fr;gap:12px;align-items:start;margin-top:10px}
+.q2-features span,.q2-results span{display:grid;place-items:center;width:36px;height:36px;border-radius:12px;background:var(--mia-lilac-soft);color:var(--mia-violet)}
+.q2-results span{background:var(--mia-lime);color:var(--mia-ink)}
+.q2-features svg,.q2-results svg{width:18px;height:18px}
+.q2-features p,.q2-results p{margin:0;font-size:13px;line-height:1.45;color:var(--mia-muted)}
+.q2-features strong,.q2-results strong{display:block;font-size:15px;color:var(--mia-ink)}
+.q2-before-after{display:grid;grid-template-columns:1fr 1fr;gap:8px;align-items:start}
+/* Как у оригинала: «после» приподнята над «до». */
+.q2-before-after>div{padding:14px 12px;border-radius:16px}
+.q2-before-after .bad{background:#F1EEF4;margin-top:40px}
+.q2-before-after .good{background:var(--mia-lilac-soft);box-shadow:0 10px 24px #7540bc1f}
+.q2-before-after h4{font:700 15px var(--sans);margin:0 0 10px;color:var(--mia-ink)}
+.q2-before-after p{display:flex;gap:8px;align-items:center;margin:8px 0 0;font-size:12.5px;line-height:1.3;color:var(--mia-ink)}
+.q2-before-after p>i{flex-shrink:0;width:20px;height:20px;border-radius:50%;display:grid;place-items:center}
+.q2-before-after p>i svg{width:12px;height:12px;stroke-width:2.6}
+.q2-before-after .bad p>i{border:1.5px solid #8A8094;color:#8A8094}
+.q2-before-after .good p>i{background:var(--mia-lime);color:var(--mia-ink)}
+.q2-before-after svg{flex:none;width:14px;height:14px;margin-top:1px}
+.q2-before-after .bad svg{color:#E0604E}
+.q2-before-after .good svg{color:#4E9A3D}
+.q2-footer{margin:22px 0 0;text-align:center;font-size:12px;color:var(--mia-muted)}
+
+/* Лист с сообщением. */
+.q2-sheet-back{position:fixed;inset:0;z-index:60;display:grid;place-items:end center;background:#2D213C66;padding:16px}
+.q2-sheet{width:100%;max-width:440px;border-radius:26px;background:#fff;padding:22px}
+.q2-sheet h3{font:700 20px/1.25 var(--sans);color:var(--mia-ink);margin:0 0 8px}
+.q2-sheet p{font-size:14px;line-height:1.5;color:var(--mia-muted);margin:0 0 16px}
+.q2-sheet a{color:var(--mia-violet)}
+@media (prefers-reduced-motion:reduce){.q2-age-card,.q2-loader-track i{transition:none}}
+/* Гарантия 14 дней — как на пейволе основной воронки. */
+.q2-offer .sale-guarantee{display:block;position:relative;overflow:hidden;margin:22px 0 0;padding:22px 20px 20px;border-radius:24px;background:#fff;border:1px solid #E4D6F2}
+.q2-offer .sale-guarantee strong{display:block;max-width:calc(100% - 78px);font-size:17px;line-height:1.3;letter-spacing:-.2px;color:var(--mia-ink);margin:0 0 10px}
+.q2-offer .sale-guarantee p{font-size:14.5px;line-height:1.55;color:var(--mia-muted);margin:0}
+.q2-offer .sale-community{margin:22px 0 0}
+/* Тарифы как у оригинала: цена входа крупно, зачёркнутая — цена продления, процент — разница между ними. */
+.q2-tariff-name small{display:block}
+.q2-tariff-day{display:flex;flex-direction:column;align-items:flex-end;gap:2px}
+.q2-tariff-day s{font-size:12px;color:var(--mia-muted)}
+.q2-off{padding:2px 7px;border-radius:7px;background:var(--mia-lime);color:var(--mia-ink);font:800 10px var(--sans);font-style:normal}
+.q2-promo{margin:0 0 12px;padding:11px 14px;border-radius:14px;background:var(--mia-ink);color:#fff;font:700 14px/1.35 var(--sans);text-align:center}
+
+/* ── Как у оригинала (проход 25.10.2026) ── */
+/* Разделы: подпись-пилюля и 4 отрезка. */
+.q2-sections{display:flex;flex-direction:column;align-items:center;gap:8px;margin:-6px 0 18px}
+.q2-section-pill{padding:4px 12px;border-radius:99px;border:1px solid #DFD1EA;background:#fff;font-size:11px;font-weight:600;color:var(--mia-ink)}
+.q2-segments{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;width:100%}
+.q2-segments i{height:4px;border-radius:4px;background:#E8DDF3;overflow:hidden}
+.q2-segments b{display:block;height:100%;background:var(--mia-violet);border-radius:4px;transition:width .4s}
+.q2-heading{text-align:center}
+.q2-heading h2{margin-left:auto;margin-right:auto}
+.q2-heading p{margin:0 auto}
+.q2-center{text-align:center}
+.q2-title-center{font:700 24px/1.2 var(--sans);letter-spacing:-.6px;text-align:center;color:var(--mia-ink);margin:8px 0 18px}
+.q2-title-center em,.q2-heading em,.q2-info-copy em{font-style:normal;color:var(--mia-violet)}
+.q2-brand-top{justify-content:space-between}
+.q2-brand-top .ob-wordmark{flex:1;text-align:center}
+.q2-left{text-align:left}
+/* Ответы: иконка слева, подзаголовок, кружок-галочка у множественного выбора. */
+.q2-answer .fq-answer-copy small{display:block;font-size:12px;color:var(--mia-muted);margin-top:2px}
+.q2-multi-answer{justify-content:space-between}
+.q2-tick{flex:none;width:22px;height:22px;border-radius:50%;border:1.5px solid #C5AEDB;display:grid;place-items:center;margin-left:auto}
+.q2-tick.on{background:var(--mia-violet);border-color:var(--mia-violet);color:#fff}
+.q2-tick svg{width:14px;height:14px}
+/* Фото сбоку внизу экрана, как у оригинала. */
+.q2-has-side{position:relative;min-height:100%;padding-bottom:0}
+.q2-has-side .fq-answers{width:62%}
+.q2-side{position:absolute;right:-22px;bottom:0;width:58%;height:300px;border-radius:24px 0 0 0;z-index:0;pointer-events:none;background:linear-gradient(160deg,transparent 0,#EADFFD 30%,#FFE3D2 100%)}
+.q2-has-side .fq-answers{position:relative;z-index:1}
+/* Экран «сколько нас». */
+.q2-big-top{margin:6px 0 24px}
+.q2-big-top strong{font-size:34px;letter-spacing:-1px}
+.q2-quote-card{position:relative;margin:34px 0 20px;padding:32px 22px 16px;border-radius:22px;background:#fff;border:1px solid #E8DDF3}
+.q2-quote-mark{position:absolute;top:-30px;left:20px;font:800 72px/1 Georgia,serif;color:var(--mia-violet)}
+.q2-quote-card blockquote{margin:0 0 18px;font:700 20px/1.35 var(--sans);text-align:center;color:var(--mia-ink)}
+.q2-quote-card figcaption{display:flex;align-items:center;gap:10px;padding-top:14px;border-top:1px solid #EEE6F5;font-size:13px;color:var(--mia-muted)}
+.q2-mini-logo{display:grid;place-items:center;width:30px;height:30px;border-radius:9px;background:var(--mia-lilac);font:800 11px var(--sans);color:var(--mia-ink)}
+/* Экран «план проверят»: круг со стрелками. */
+.q2-cycle{position:relative;width:260px;height:260px;margin:4px auto 6px}
+.q2-cycle svg{position:absolute;inset:0;width:100%;height:100%}
+.q2-cycle-img{position:absolute;left:50%;top:50%;width:150px;height:150px;margin:-75px 0 0 -75px;border-radius:50%}
+.q2-tag{position:absolute;padding:4px 10px;border-radius:8px;background:var(--mia-violet);color:#fff;font:700 11px var(--sans)}
+.q2-tag.t1{left:6px;top:58px}.q2-tag.t2{right:0;top:58px}.q2-tag.t3{left:50%;bottom:4px;transform:translateX(-50%)}
+.q2-quote-line{font-size:14px;line-height:1.55;color:var(--mia-muted);text-align:center;margin:0 0 20px}
+/* Профиль: показатели слева, фото справа. */
+.q2-traits-card{display:grid;grid-template-columns:1fr 42%;gap:10px;margin:12px 0 0;padding:14px}
+.q2-traits-list{display:grid;gap:10px}
+.q2-traits-list>div{display:flex;gap:10px;align-items:center}
+.q2-traits-list span{display:grid;place-items:center;width:32px;height:32px;border-radius:10px;background:var(--mia-lilac-soft);color:var(--mia-violet)}
+.q2-traits-list svg{width:16px;height:16px}
+.q2-traits-list p{margin:0}
+.q2-traits-list small{display:block;font-size:11px;color:var(--mia-muted)}
+.q2-traits-list strong{font-size:14px;color:var(--mia-ink)}
+.q2-traits-img{height:100%;min-height:170px;border-radius:16px}
+.q2-gauge-bar em{white-space:nowrap}
+/* План: столбцы по месяцам. */
+.q2-date-pill{display:inline-block;margin:10px 0 0;padding:6px 12px;border-radius:10px;background:#F3ECFD;font-weight:700;color:var(--mia-ink)}
+.q2-months{display:grid;grid-template-columns:34px 1fr;gap:8px;margin:18px 0 0;height:210px}
+.q2-months-axis{display:flex;flex-direction:column;justify-content:space-between;font-size:10px;color:var(--mia-muted);padding:4px 0 22px}
+.q2-months-bars{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;align-items:end}
+.q2-months-bars>div{display:flex;flex-direction:column;justify-content:flex-end;align-items:center;height:100%;gap:6px}
+.q2-months-bars i{position:relative;display:block;width:100%;height:var(--h);border-radius:10px;background:var(--c)}
+.q2-months-bars em{position:absolute;left:50%;bottom:calc(100% + 6px);transform:translateX(-50%);padding:3px 7px;border-radius:7px;background:var(--mia-ink);color:#fff;font:700 10px var(--sans);font-style:normal;white-space:nowrap}
+.q2-months-bars em.goal{background:var(--mia-violet)}
+.q2-months-bars span{font-size:11px;color:var(--mia-muted);text-transform:capitalize}
+/* Сборка плана. */
+.q2-loader-sub{text-align:center;font-size:14px;color:var(--mia-muted);margin:0 0 18px}
+.q2-loader-row[hidden]{display:none}
+.q2-loader-row.done .q2-loader-track{height:2px;background:var(--mia-violet)}
+.q2-loader-row.done .q2-loader-track i{display:none}
+.q2-loader-row.done b{color:var(--mia-violet)}
+.q2-loader-row b svg{width:18px;height:18px}
+.q2-loader-ask{place-items:center}
+.q2-ask-card .q2-ask-btn{background:#F6F0FE;border-color:#F6F0FE}
+/* Почта. */
+.q2-mail-field{display:flex;align-items:center;gap:10px;padding:0 14px;height:56px;border-radius:16px;border:1.5px solid var(--mia-lilac);background:#fff;margin:6px 0 12px}
+.q2-mail-field svg{width:20px;height:20px;color:var(--mia-muted)}
+.q2-mail-field input{flex:1;border:0;outline:0;font:500 16px var(--sans);background:transparent;color:var(--mia-ink)}
+.q2-users{justify-content:center}
+.q2-users em{font-style:normal;color:var(--mia-violet)}
+.q2-avatars{display:flex}
+.q2-avatars i{width:22px;height:22px;border-radius:50%;border:2px solid #fff;margin-left:-6px;background:linear-gradient(150deg,#C9AFF5,#FFC8AB)}
+.q2-avatars i:nth-child(2n){background:linear-gradient(150deg,#FFC8AB,#DFFF70)}
+.q2-privacy{display:flex;gap:8px;font-size:12px;line-height:1.5;color:var(--mia-muted);margin:10px 0 0}
+.q2-privacy svg{flex:none;width:14px;height:14px;margin-top:2px}
+.q2-privacy a{color:inherit}
+.q2-subscribe{display:flex;flex-direction:column;justify-content:space-between;min-height:100%}
+.q2-subscribe .q2-title-center{margin-top:58%}
+/* Имя: поле и кнопка сразу под ним. */
+.q2-namepage .q2-title-center{margin-top:44%}
+.q2-name-input{display:block;width:100%;box-sizing:border-box;height:52px;padding:0 16px;border-radius:14px;border:1.5px solid var(--mia-lilac);font:500 16px var(--sans);color:var(--mia-ink);background:#fff;outline:0}
+.q2-inline-cta{margin-top:12px}
+/* «План готов»: кривая готовности. */
+.q2-ready{position:relative;margin:8px 0 0;padding:16px}
+.q2-ready small{font-size:12px;font-weight:700;color:var(--mia-ink)}
+.q2-ready svg{display:block;width:100%;height:auto;margin-top:8px}
+.q2-ready-tag{position:absolute;padding:3px 8px;border-radius:7px;background:var(--mia-ink);color:#fff;font:700 10px var(--sans)}
+.q2-ready-tag.now{left:14px;top:118px}.q2-ready-tag.after{right:34px;top:30px}
+.q2-ready-axis{display:grid;grid-template-columns:repeat(4,1fr);font-size:10px;color:var(--mia-muted);text-align:center;margin-top:4px}
+
+.page .q2-title-center{font-size:26px;line-height:1.2;letter-spacing:-.7px}
+.ob-top.q2-brand-top>span.ob-wordmark{font:italic 800 30px/.9 var(--sans);letter-spacing:-3px;color:#2C2536;text-transform:none}
+.q2-months-bars em.goal{left:auto;right:0;transform:none}
+/* Карточка эксперта на экране «план проверят». */
+.q2-expert{margin:0 0 20px;border-radius:20px;background:#fff;border:1px solid #E8DDF3;overflow:hidden}
+.q2-expert>small{display:flex;align-items:center;justify-content:center;gap:6px;padding:8px;background:#F3ECFD;font-size:12px;font-weight:700;color:var(--mia-violet)}
+.q2-expert>small svg{width:14px;height:14px}
+.q2-expert>div{display:flex;align-items:center;gap:12px;padding:12px 16px}
+.q2-expert-ava{display:grid;place-items:center;width:44px;height:44px;border-radius:50%;overflow:hidden;background:linear-gradient(150deg,#C9AFF5,#FFC8AB);color:#fff}
+.q2-expert-ava img{width:100%;height:100%;object-fit:cover}
+.q2-expert p{margin:0;font-size:13px;color:var(--mia-muted)}
+.q2-expert strong{display:block;font-size:15px;color:var(--mia-ink)}
+/* Печать и ссылки на исследования (первый экран после возраста и экран research). */
+.q2-refs{font-size:12px;color:var(--mia-muted);text-align:center;margin:-6px 0 14px}
+.q2-refs a{color:var(--mia-violet)}
+.q2-seal-row{display:grid;grid-template-columns:120px 1fr;gap:14px;align-items:center;margin:0 0 22px}
+.q2-seal{height:120px;background:none;border-radius:0}
+.q2-seal>img{object-fit:contain}
+.q2-seal-row p{margin:0;font-size:14px;line-height:1.5;color:var(--mia-ink)}
+/* Отзывы (включаются D.reviewsOn). */
+.q2-review{padding:16px;border-radius:20px;background:#fff;border:1px solid #E8DDF3;margin:0 0 10px}
+.q2-review-top{display:grid;grid-template-columns:36px 1fr auto;gap:10px;align-items:center;margin-bottom:8px}
+.q2-review-top i{display:grid;place-items:center;width:36px;height:36px;border-radius:50%;background:var(--mia-lilac);font:700 14px var(--sans);font-style:normal;color:#553080}
+.q2-review-top strong{font-size:14px;color:var(--mia-ink)}
+.q2-stars{color:var(--mia-violet);letter-spacing:1px;font-size:13px}
+.q2-review p{margin:0;font-size:13px;line-height:1.5;color:var(--mia-muted)}
+.q2-review-strip{display:flex;gap:10px;overflow-x:auto;scroll-snap-type:x mandatory;margin:26px -22px 0;padding:0 22px 6px}
+.q2-review-strip .q2-review{flex:0 0 82%;scroll-snap-align:center;margin:0}
+/* Плашка рейтинга на предложении. */
+.q2-rating{display:flex;align-items:center;gap:14px;padding:16px;border-radius:22px;background:var(--mia-night);color:#fff;margin:0 0 12px}
+.q2-rating>b{font:800 42px/1 var(--sans);color:var(--mia-lime)}
+.q2-rating strong{display:block;font-size:16px}
+.q2-rating small{display:block;font-size:12px;color:#C2A9D5}
+.q2-stars-big{color:var(--mia-lime);letter-spacing:2px;font-size:18px}
+/* Иконки ответов — скруглённые плашки (просьба владельца 25.10.2026). */
+.q2-answer .q2-icon{width:36px;height:36px;border-radius:12px;flex-shrink:0}
+.q2-answer .q2-icon svg{width:20px;height:20px}
+/* Фото сбоку растворяется в фоне слева и сверху, как у оригинала (у снимков свой фон, без рамки). */
+.q2-side{border-radius:0;-webkit-mask-image:linear-gradient(to bottom,transparent 0,#000 22%),linear-gradient(to right,transparent 0,#000 30%);-webkit-mask-composite:source-in;mask-image:linear-gradient(to bottom,transparent 0,#000 22%),linear-gradient(to right,transparent 0,#000 30%);mask-composite:intersect}
+/* Фото сбоку как у оригинала: крупнее (≈¾ ширины, нижняя половина экрана), растворение сверху, слева и снизу,
+   выезжает справа. */
+/* Блок строго 3:4, как снимок: иначе cover обрезает правую половину, где стоит человек. */
+.q2-has-side .q2-side{height:min(60vh,600px);width:auto;aspect-ratio:3/4;max-width:100%;right:0;bottom:0;background:none;
+  -webkit-mask-image:linear-gradient(to bottom,transparent 0,#000 20%,#000 82%,transparent 100%),linear-gradient(to right,transparent 0,#000 28%);
+  mask-image:linear-gradient(to bottom,transparent 0,#000 20%,#000 82%,transparent 100%),linear-gradient(to right,transparent 0,#000 28%);
+  animation:q2-side-in .7s cubic-bezier(.22,1,.36,1) .15s both}
+.q2-has-side .q2-side>img{object-position:center top}
+@keyframes q2-side-in{from{opacity:0;transform:translateX(35%)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.q2-has-side .q2-side{animation:none}}
+
+/* Копирайт компании внизу первого экрана и оффера, как у оригинала. */
+.q2-copy{margin:18px 0 6px;text-align:center;font-size:11.5px;line-height:1.4;color:#A79BB2}
+.q2-age{display:flex;flex-direction:column;min-height:100%}
+.q2-age .q2-copy{margin-top:auto;padding-top:18px}
+.q2-legal a{color:var(--mia-violet);text-decoration:underline;text-underline-offset:2px}
+/* Размеры текста как у оригинала (у них Poppins: вопрос 20px, ответ 16px/500, плашка раздела 14px). */
+.q2-page .q2-heading p{font-size:14px}
+.q2-answer .fq-answer-copy strong{font-size:16px;font-weight:500;line-height:1.25}
+.q2-section-pill{font-size:13px}
+/* Поле e-mail ниже, ближе к середине экрана, как у оригинала. */
+.q2-email .q2-heading{margin-top:30%!important}
+/* С фото сбоку ответы шире: «Hmm, je ne sais pas» в одну строку, как у оригинала. */
+.q2-has-side .fq-answers{width:68%}
+/* Своя страница оплаты (лист поверх предложения) */
+html.q2-pay-open,html.q2-pay-open body{overflow:hidden}
+.q2-pay-back{position:fixed;inset:0;z-index:70;overflow-y:auto;-webkit-overflow-scrolling:touch;background:#F6F1FB;padding:max(14px,env(safe-area-inset-top)) 16px max(24px,env(safe-area-inset-bottom))}
+.q2-pay-back[hidden]{display:none}
+.q2-pay{position:relative;max-width:440px;margin:0 auto}
+.q2-pay-x{display:grid;place-items:center;width:40px;height:40px;margin:0 0 4px -8px;border-radius:12px;color:var(--mia-muted);background:transparent}
+.q2-pay-x svg{width:22px;height:22px}
+.q2-pay-title{font:700 24px/1.15 var(--sans);letter-spacing:-.6px;color:var(--mia-ink);text-align:center;margin:0 0 16px}
+.q2-pay-title em{font-style:normal;color:var(--mia-violet)}
+.q2-pay-card{border-radius:24px;background:#fff;border:1px solid #E8DDF3;padding:20px 18px 18px;box-shadow:0 10px 30px #7540BC12}
+.q2-pay-card h4{display:flex;align-items:center;justify-content:center;gap:6px;font:700 17px var(--sans);color:var(--mia-ink);margin:0 0 16px}
+.q2-pay-card h4 svg{width:16px;height:16px;color:var(--mia-violet)}
+.q2-pay-row{display:flex;justify-content:space-between;gap:12px;font-size:15px;color:var(--mia-muted);margin:0 0 10px}
+.q2-pay-row b{color:var(--mia-ink);font-weight:600;white-space:nowrap}
+.q2-pay-row.off b{color:#C2413B}
+.q2-pay-total{display:flex;justify-content:space-between;align-items:baseline;border-top:1px solid #EDE5F5;padding-top:14px;margin-top:4px;font:700 18px var(--sans);color:var(--mia-ink)}
+.q2-pay-total b{font-size:22px;white-space:nowrap}
+.q2-pay-total b s{font-size:15px;font-weight:600;color:var(--mia-muted);margin-right:4px}
+.q2-pay-saved{text-align:right;font-size:13px;font-weight:600;color:#C2413B;margin:4px 0 12px}
+.q2-pay-row.next{font-weight:700;color:var(--mia-ink);font-size:15px}
+.q2-pay-agree{font-size:12.5px;line-height:1.5;color:var(--mia-muted);text-align:center;background:#FBF8FE;border:1px solid #EDE5F5;border-radius:14px;padding:12px;margin:6px 0 16px}
+.q2-pay-agree b{color:var(--mia-ink)}
+.q2-pay-load{display:flex;align-items:center;justify-content:center;gap:10px;min-height:120px;font-size:13px;color:var(--mia-muted)}
+.q2-pay-load span{width:18px;height:18px;border-radius:50%;border:2px solid #E8DCFB;border-top-color:var(--mia-violet);animation:q2spin .8s linear infinite}
+.q2-pay-load[hidden],.q2-pay-or[hidden],.q2-pay-err[hidden]{display:none}
+@keyframes q2spin{to{transform:rotate(360deg)}}
+#q2-pay-express{min-height:50px}
+.q2-pay-el[hidden],.q2-pay-methods[hidden],[data-pay="wallet"][hidden],[data-pay="card"][hidden],#q2-pay-embed[hidden]{display:none}
+.q2-pay-methods{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:0 0 14px}
+.q2-pay-m{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;min-height:84px;padding:14px 8px 12px;border:1.5px solid #E2D9EC;border-radius:16px;background:#fff;font:600 14px/1.2 var(--sans);color:var(--mia-ink);text-align:center;cursor:pointer}
+.q2-pay-m b{font-weight:700}
+.q2-pay-m.on{border-color:var(--mia-violet);background:#FBF8FE;box-shadow:0 0 0 3px #7540BC14}
+.q2-pay-m-dot{position:absolute;top:9px;right:9px;width:16px;height:16px;border-radius:50%;border:1.5px solid #CFC3DD;background:#fff}
+.q2-pay-m.on .q2-pay-m-dot{border-color:var(--mia-violet);box-shadow:inset 0 0 0 3.5px #fff;background:var(--mia-violet)}
+.q2-pay-m-logos{display:flex;flex-wrap:wrap;justify-content:center;gap:4px}
+.q2-pay-m-logos:empty{display:none}
+.q2-pay-or{display:flex;align-items:center;gap:10px;margin:14px 0;font-size:12px;color:var(--mia-muted)}
+.q2-pay-or:before,.q2-pay-or:after{content:'';flex:1;height:1px;background:#EDE5F5}
+.q2-pay-err{margin:12px 0 0;padding:10px 12px;border-radius:12px;background:#FDECEA;color:#9B2C26;font-size:13px;line-height:1.45}
+.q2-pay-btn{margin-top:16px}
+.q2-pay-btn.busy{opacity:.7}
+.q2-pay-trust{display:flex;align-items:center;justify-content:center;gap:6px;font-size:11.5px;color:var(--mia-muted);text-align:center;margin:14px 0 0}
+.q2-pay-trust svg{width:14px;height:14px;flex-shrink:0;color:#3C8C5A}
+.q2-pay-legal{font-size:11px;line-height:1.5;color:var(--mia-muted);text-align:center;margin:8px 0 0}
+.q2-pay-legal a{color:var(--mia-violet)}
+/* Поля Stripe монтируются сразу (иначе не придёт ready), но видны только после загрузки */
+.q2-pay-fields.loading{visibility:hidden;height:0;overflow:hidden}
+#q2-pay-embed{min-height:420px;margin:0 -6px}
+.q2-seal-row p a{color:var(--mia-violet);font-weight:600}
+/* Строка доверия под «Obtenir mon plan»: замок, карты и кошельки, отмена и гарантия. */
+.q2-trust{margin:10px 0 4px;text-align:center}
+.q2-trust-pay{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:6px;margin:0;font-size:12px;font-weight:600;color:var(--mia-ink)}
+.q2-trust-pay>svg{width:14px;height:14px}
+.q2-trust-pay>span{margin-right:2px}
+.q2-card-logo{display:inline-flex;align-items:center;gap:1px;height:20px;padding:0 6px;border:1px solid #E2D9EC;border-radius:5px;background:#fff;font:700 10px/1 var(--sans);font-style:normal;color:#111}
+.q2-card-logo svg{width:11px;height:11px;stroke-width:2}
+.q2-card-logo.visa{color:#1A1F71;font-style:italic;font-weight:800;letter-spacing:.3px}
+.q2-card-logo.mc b{width:11px;height:11px;border-radius:50%;background:#EB001B}
+.q2-card-logo.mc b+b{background:#F79E1B;margin-left:-5px;opacity:.9}
+.q2-card-logo em{font-style:normal;font-weight:800;color:#4285F4}
+.q2-trust-note{margin:6px 0 0;font-size:12px;color:var(--mia-muted)}
+
+/* ── Цена за день, колесо, окно при уходе, анимации графиков (02.11.2026) ── */
+.q2-tariff-day b{font-size:21px;line-height:1.05;letter-spacing:-.3px}
+.q2-tariff-day small{margin-top:-2px}
+.q2-won{margin:0 0 12px;padding:11px 14px;border-radius:14px;background:#E7F5E4;color:#2F6B2A;font:700 14px/1.35 var(--sans);text-align:center;animation:q2-pop .5s cubic-bezier(.22,1,.36,1) both}
+.q2-wheel{position:relative;width:min(84vw,330px);margin:18px auto 8px}
+.q2-wheel svg{display:block;width:100%;height:auto;filter:drop-shadow(0 14px 26px #7540BC33)}
+.q2-wheel-disc{transform-origin:150px 150px;transform-box:view-box}
+.q2-wheel-pin{position:absolute;left:50%;top:-6px;z-index:2;width:0;height:0;margin-left:-14px;border-left:14px solid transparent;border-right:14px solid transparent;border-top:26px solid var(--mia-ink);filter:drop-shadow(0 3px 4px #0003)}
+.q2-wheel.done svg{animation:q2-glow 1.6s ease-in-out 2}
+@keyframes q2-glow{50%{filter:drop-shadow(0 0 30px #F2A93B)}}
+.q2-wheel-page .q2-info-copy p b{color:var(--mia-violet)}
+.q2-exit-back{position:fixed;inset:0;z-index:80;display:grid;place-items:center;padding:16px;background:#1D152866;animation:q2-fade .25s ease both}
+.q2-exit{position:relative;width:100%;max-width:400px;padding:26px 20px 16px;border-radius:26px;background:#fff;text-align:center;box-shadow:0 24px 60px #2D213C40;animation:q2-pop .4s cubic-bezier(.22,1,.36,1) both}
+.q2-exit-x{position:absolute;top:10px;right:10px;margin:0}
+.q2-gift{position:relative;width:118px;margin:0 auto 6px}
+.q2-gift svg{display:block;width:100%;height:auto;animation:q2-wiggle 1.4s ease-in-out .4s 2}
+.q2-gift span{position:absolute;top:2px;right:-10px;padding:3px 7px;border-radius:8px;background:#C2413B;color:#fff;font:800 13px var(--sans)}
+.q2-exit h3{margin:4px 0 8px;font:800 24px/1.15 var(--sans);letter-spacing:-.4px;color:var(--mia-ink)}
+.q2-exit p{margin:0 0 16px;font-size:15px;line-height:1.45;color:var(--mia-muted)}
+.q2-exit p b{color:var(--mia-ink)}
+.q2-exit-guarantee{display:flex;gap:12px;align-items:center;text-align:left;padding:14px;margin:0 0 16px;border-radius:16px;background:#EEF8F1;border:1px solid #CDEBD6}
+.q2-exit-guarantee svg{flex-shrink:0;width:30px;height:30px;color:#3C8C5A}
+.q2-exit-guarantee b{display:block;font-size:14px;color:var(--mia-ink)}
+.q2-exit-guarantee span{font-size:12.5px;line-height:1.4;color:var(--mia-muted)}
+.q2-exit-take{width:100%}
+.q2-exit-no{display:block;margin:10px auto 0;padding:8px;background:none;border:0;font:500 14px var(--sans);color:var(--mia-muted)}
+@keyframes q2-fade{from{opacity:0}}
+@keyframes q2-pop{from{opacity:0;transform:scale(.92) translateY(8px)}}
+@keyframes q2-wiggle{25%{transform:rotate(-6deg)}75%{transform:rotate(6deg)}}
+
+/* Графики «растут» при появлении экрана */
+.q2-months-bars i{transform-origin:bottom;animation:q2-grow .9s cubic-bezier(.22,1,.36,1) both}
+.q2-months-bars>div:nth-child(2) i{animation-delay:.15s}
+.q2-months-bars>div:nth-child(3) i{animation-delay:.3s}
+.q2-months-bars>div:nth-child(4) i{animation-delay:.45s}
+.q2-months-bars em{animation:q2-pop .4s ease 1.1s both}
+@keyframes q2-grow{from{transform:scaleY(0)}}
+.q2-ready path{stroke-dasharray:1;stroke-dashoffset:1;animation:q2-draw 1.6s cubic-bezier(.45,0,.2,1) .2s forwards}
+@keyframes q2-draw{to{stroke-dashoffset:0}}
+.q2-ready circle{transform-box:fill-box;transform-origin:center;animation:q2-pop .4s ease .2s both}
+.q2-ready circle:last-of-type{animation-delay:1.7s}
+.q2-ready-tag.now{animation:q2-pop .4s ease .3s both}
+.q2-ready-tag.after{animation:q2-pop .4s ease 1.8s both}
+.q2-gauge-bar i{animation:q2-slide 1.3s cubic-bezier(.22,1,.36,1) .2s both}
+@keyframes q2-slide{from{left:0}}
+.q2-meter i.on{transform-origin:left;animation:q2-fill .5s ease both}
+.q2-metric:nth-child(2) .q2-meter i.on{animation-delay:.25s}
+.q2-metric:nth-child(3) .q2-meter i.on{animation-delay:.5s}
+.q2-metrics>div:last-child .q2-meter i.on{animation-duration:.7s;animation-delay:.6s}
+.q2-metrics>div:last-child .q2-metric:nth-child(2) .q2-meter i.on{animation-delay:.85s}
+.q2-metrics>div:last-child .q2-metric:nth-child(3) .q2-meter i.on{animation-delay:1.1s}
+@keyframes q2-fill{from{transform:scaleX(0)}}
+@media (prefers-reduced-motion:reduce){.q2-months-bars i,.q2-months-bars em,.q2-ready path,.q2-ready circle,.q2-ready-tag,.q2-gauge-bar i,.q2-meter i.on,.q2-won,.q2-exit,.q2-exit-back,.q2-gift svg,.q2-wheel.done svg{animation:none;stroke-dashoffset:0}}

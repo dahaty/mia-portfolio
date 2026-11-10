@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+<meta name="facebook-domain-verification" content="kvw2tdnl8j5poao023u1pf8po2xrc3">
+<meta name="facebook-domain-verification" content="erh37mwrz327e33osq12t8tno4aaci">
+<script src="route.js"></script>
+<script>
+/* Прежняя страница корня (по /index.html): приложение, оплата, вход. Посетительницу квиза отправляем в квиз —
+   на /q/, а не на «/», чтобы без сети (страница из кэша сервис-воркера) не уйти в цикл. */
+(function(){try{if(location.pathname!=='/'&&location.pathname!=='/index.html')return;if(window.MiaRoute&&window.MiaRoute()==='quiz')location.replace('/q/'+location.search+location.hash);}catch(e){}})();
+</script>
+<meta name="theme-color" content="#FAF8FE">
+<meta name="description" content="mía — ежедневные практики самоподдержки после расставания.">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="mía">
+<title>mía — вернись к себе</title>
+<script>document.addEventListener('gesturestart',function(e){e.preventDefault();},{passive:false});</script>
+<link rel="icon" type="image/png" sizes="192x192" href="assets/icon-192.png">
+<link rel="apple-touch-icon" href="assets/icon-180.png">
+<link rel="stylesheet" href="journey.css">
+<link rel="stylesheet" href="design-v5.css">
+<link rel="stylesheet" href="onboarding.css">
+<link rel="stylesheet" href="funnel-v7.css">
+<link rel="stylesheet" href="sales-v8.css">
+<link rel="stylesheet" href="map-v9.css">
+<link rel="stylesheet" href="color-v10.css">
+<link rel="stylesheet" href="app.css">
+</head>
+<body>
+<div class="studio app-shell">
+<main class="device-stage">
+<div class="device" id="device" data-theme="cherry">
+<header class="app-header"><button class="app-logo" data-action="home" aria-label="mía, перейти к сегодняшнему дню">mía<span>это время для тебя</span></button><button class="help-pill" data-action="help"><span class="live-dot"></span>Я рядом <i data-lucide="sparkles"></i></button></header>
+<div id="app-viewport" class="app-viewport"><div id="app-view" class="app-view"></div></div>
+<nav class="app-nav" aria-label="Основная навигация"><button data-action="home" data-nav="today"><i data-lucide="sun"></i><span>Сегодня</span></button><button data-action="route" data-nav="route"><i data-lucide="route"></i><span>Прогресс</span></button><button data-action="assist" data-nav="assist"><i data-lucide="heart-handshake"></i><span>Помощь</span></button><button data-action="account" data-nav="account"><i data-lucide="user-round"></i><span>Аккаунт</span></button><span class="nav-mark" aria-hidden="true"></span></nav>
+<div class="home-bar" aria-hidden="true"></div>
+<div id="overlay-root"></div>
+<div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+</div>
+</main>
+</div>
+<noscript><p style="padding:24px;font-family:sans-serif">Для работы mía нужен JavaScript.</p></noscript>
+<script src="config.js"></script>
+<script src="analytics.js"></script>
+<script src="account.js"></script>
+<script src="events.js"></script>
+<script src="assets/lucide.min.js"></script>
+<script src="core.js"></script>
+<script src="journey-data.js"></script>
+<script src="journey-progress.js"></script>
+<script src="funnel-data.js"></script>
+<script src="reviews.js"></script>
+<script src="adaptive-map.js"></script>
+<script src="fr-success.js"></script>
+<script src="onboarding.js"></script>
+<script src="webapp-core.js"></script>
+<script src="webapp-figures.js"></script>
+<script src="webapp-lesson.js"></script>
+<script src="webapp.js"></script>
+<script src="journey.js"></script>
+</body>
+</html>
